@@ -2,8 +2,12 @@ package com.fabdev.model;
 
 import java.io.Serializable;
 
+import com.fabdev.enuns.TipoEndereco;
+
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -36,6 +40,9 @@ public class Endereco implements Serializable {
 	private String uf;
 	private String cidade;
 
+	@Enumerated(EnumType.STRING)
+	private TipoEndereco tipoEndereco;
+	
 	@ManyToOne(targetEntity = Pessoa.class)
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
 	private Pessoa pessoa;
