@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @SequenceGenerator(name = "seq_categoria_produto", sequenceName = "seq_categoria_produto")
 public class CategoriaProduto {
     @Id @EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.SEQUENCE) 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_categoria_produto") 
 	private Long id;
 	
     @Column(nullable = false)
