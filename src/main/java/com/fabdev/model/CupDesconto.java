@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import com.fabdev.enuns.StatusContaReceber;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class CupDesconto implements Serializable{
 		@EqualsAndHashCode.Include
 		@Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cup_desconto")
 		private Long id;
-
+		@Column(nullable = false)
 	    private String codDesc;
 	    
 	    private BigDecimal valorRealDesc;

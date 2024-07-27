@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -26,10 +27,13 @@ public abstract class Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
+	@EqualsAndHashCode.Include
 	private Long id;
-	
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String telefone;
+	@Column(nullable = false)
 	private String nome;
 	@OneToMany(mappedBy = "pessoa",orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Endereco> enderecos = new ArrayList<>();

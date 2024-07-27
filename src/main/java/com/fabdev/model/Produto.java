@@ -25,22 +25,22 @@ private static final long serialVersionUID = 1L;
  @EqualsAndHashCode.Include
  @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
  private Long id;
-
+ @Column(nullable = false)
  private String tipoUnidade;
- 
+ @Column(nullable = false)
  private String nome;
  
- @Column(columnDefinition = "text", length = 2000)
+ @Column(columnDefinition = "text", length = 2000,nullable = false)
  private String descricao;
- 
+ @Column(nullable = false)
  private Double peso;
- 
+ @Column(nullable = false)
  private Double altura;
- 
+ @Column(nullable = false)
  private Double profundidade;
- 
+ @Column(nullable = false)
  private BigDecimal valorVenda;
- 
+ @Column(nullable = false)
  private Integer qtdEstoque;
  
  private Integer qtdAlertaEstoque;
@@ -48,7 +48,7 @@ private static final long serialVersionUID = 1L;
  private String linkYoutube;
  
  private Boolean alertaEstoque=false;
- 
+ @Column(nullable = false)
  private Boolean ativo=true;
  
  private Integer qtdClicks;

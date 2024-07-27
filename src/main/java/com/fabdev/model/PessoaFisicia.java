@@ -2,6 +2,7 @@ package com.fabdev.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -15,7 +16,7 @@ import lombok.Data;
 @PrimaryKeyJoinColumn(name = "id")
 public class PessoaFisicia extends Pessoa{
 	private static final long serialVersionUID = 1L;
-	
+	@Column(nullable=false)
 	private String cpf;
 	
 	@Temporal(TemporalType.DATE)

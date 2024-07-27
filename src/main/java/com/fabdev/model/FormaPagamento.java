@@ -2,6 +2,7 @@ package com.fabdev.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,7 @@ public class FormaPagamento implements Serializable {
 	@Id @EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_endereco")
 	private Long id;
-	
+    @Column(nullable = false)
 	private String descricao;
 	
 
